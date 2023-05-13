@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">EduApp</string>
+    <string name="welcome_screen_title">Simple way to\nhelp control your\nSavings</string>
+    <string name="transaction_screen_current_balance_title">Current Balance</string>
+
+    <string name="text_title">Title</string>
+    <string name="text_note">Note</string>
+    <string name="text_amount">Amount</string>
+    <string name="text_when">When</string>
+    <string name="text_transaction_type">Transaction type</string>
+    <string name="text_save_transaction">Save transaction</string>
+    <string name="text_create_transaction">Create Transaction</string>
+
+    <string name="text_total_savings">Total Savings</string>
+    <string name="text_total_expense">Total Expense</string>
+    <string name="text_total_income">Total Income</string>
+
+    <string name="text_all">All</string>
+    <string name="text_income">Income</string>
+    <string name="text_expense">Expense</string>
+
+    <string name="successfully_saved">Transaction successfully saved!</string>
+
+</resources>

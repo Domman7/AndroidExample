@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ivBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/welcome_screen_bg"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/ivArrowBack"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/arrow_right"
+        android:rotation="180"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAvatar"
+        android:layout_width="54dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="34dp"
+        android:layout_marginStart="16dp"
+        android:shape="ring"
+        app:layout_constraintTop_toBottomOf="@+id/ivArrowBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:cardCornerRadius="40dp">
+
+        <ImageView
+            android:id="@+id/ivProfileAvatar"
+            android:layout_width="match_parent"
+            android:layout_height="54dp"
+            android:background="@drawable/profile_avatar" />
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/tvCurrentBalanceTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:textSize="14sp"
+        android:text="@string/transaction_screen_current_balance_title"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toTopOf="@+id/cvAvatar"
+        app:layout_constraintStart_toEndOf="@+id/cvAvatar" />
+
+    <TextView
+        android:id="@+id/tvCurrentBalance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="20dp"
+        android:textSize="24sp"
+        android:text="$5,700"
+        android:textColor="@color/white_1"
+        app:layout_constraintTop_toBottomOf="@+id/tvCurrentBalanceTitle"
+        app:layout_constraintStart_toEndOf="@+id/cvAvatar" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="@dimen/dimen_19"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:background="@drawable/tab_background"
+        app:tabRippleColor="@null"
+        app:tabTextColor="@color/white"
+        app:tabTextAppearance="@style/TabTextAppearance"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabSelectedTextColor="@color/white"
+        app:tabBackground="@drawable/tab_selector"
+        app:tabIndicatorHeight="0dp"
+        app:layout_constraintTop_toBottomOf="@+id/cvAvatar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_all" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_income" />
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_expense" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <Button
+        android:id="@+id/btnCreateTransaction"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:padding="4dp"
+        android:background="@drawable/square_gradient_shape"
+        android:drawableTop="@drawable/plus"
+        android:textSize="12sp"
+        android:text="@string/text_create_transaction"
+        android:textColor="@color/gray"
+        android:gravity="bottom|center_horizontal"
+        android:textAllCaps="false"
+
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/ivExpenseBlock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        android:background="@drawable/expense_block"
+        app:layout_constraintTop_toBottomOf="@+id/btnCreateTransaction"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/circularProgressIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:progress="70"
+        app:indicatorSize="70dp"
+        app:indicatorColor="@color/progress_active"
+        app:trackColor="@color/progress_inactive"
+        app:trackThickness="7dp"
+        app:layout_constraintTop_toTopOf="@+id/ivExpenseBlock"
+        app:layout_constraintEnd_toEndOf="@+id/ivExpenseBlock" />
+
+    <TextView
+        android:id="@+id/tvTotalIncomeExpenseBlocks"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="20dp"
+        android:textSize="16sp"
+        android:text="@string/text_total_savings"
+        android:textColor="@color/white_2"
+        app:layout_constraintTop_toTopOf="@+id/ivExpenseBlock"
+        app:layout_constraintStart_toStartOf="@+id/ivExpenseBlock" />
+
+    <TextView
+        android:id="@+id/tvTotalIncomeExpenseBlocksAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:layout_marginStart="20dp"
+        android:textSize="16sp"
+        android:text="Р"
+        android:textColor="@color/gray_total_amount"
+        app:layout_constraintTop_toBottomOf="@+id/tvTotalIncomeExpenseBlocks"
+        app:layout_constraintStart_toStartOf="@+id/ivExpenseBlock" />
+
+    <TextView
+        android:id="@+id/tvTotalIncomeExpense"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="11sp"
+        android:text="Р"
+        android:textColor="@color/white_2"
+        app:layout_constraintTop_toTopOf="@+id/circularProgressIndicator"
+        app:layout_constraintBottom_toBottomOf="@+id/circularProgressIndicator"
+        app:layout_constraintStart_toStartOf="@+id/circularProgressIndicator"
+        app:layout_constraintEnd_toEndOf="@+id/circularProgressIndicator"/>
+
+    <ImageView
+        android:id="@+id/ivTransactionBlock"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="100dp"
+        android:translationY="20dp"
+        android:background="@drawable/transaction_block"
+        app:layout_constraintTop_toTopOf="@+id/ivExpenseBlock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsvRoot"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="36dp"
+        app:layout_constraintTop_toTopOf="@+id/ivTransactionBlock"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerViewTransactions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="never"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintVertical_bias="0.0"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/progressBar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        layout="@layout/progress_bar_layout"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
